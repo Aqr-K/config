@@ -41,7 +41,7 @@ fi
 
 #修改app监听0.0.0.0为127.0.0.1
 echo "修改app监听为本地地址..."
-if [ -f /app/index.js]
+if [ -f /app/index.js ]
   then 
     echo "开始修改..." 
     sed -i 's|0.0.0.0|127.0.0.1|g' /app/index.js
