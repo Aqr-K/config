@@ -136,7 +136,7 @@ echo "开始配置nginx.conf..."
 if command -v nginx > /dev/null 2>&1;
   then
     echo "下载nginx.conf配置..."
-    wget https://github.com/Aqr-K/config/raw/main/replit_ytmusic_api/nginx.conf -P /etc/nginx -O nginx.conf
+    wget https://github.com/Aqr-K/config/raw/main/replit_ytmusic_api/nginx.conf -O /etc/nginx/nginx.conf
     echo "nginx.conf下载完成..."
   else
     echo "未检测到nginx命令，脚本中断..."
