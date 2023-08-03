@@ -39,6 +39,18 @@ if [ -d /app ]
 fi
 
 
+#修改app监听0.0.0.0为127.0.0.1
+echo "修改app监听为本地地址..."
+if [ -f /app/index.js]
+  then 
+    echo "开始修改..." 
+    sed -i 's|0.0.0.0|127.0.0.1|g' /app/index.js
+    echo "修改完成..."
+  else
+    echo "未找到index.js，终止脚本..."
+    exit
+fi
+
 #进入工作目录
 echo "进入工作目录..."
 cd /app
