@@ -130,7 +130,7 @@ if command -v nginx > /dev/null 2>&1;
 fi
 
 
-#载入nginx.conf
+#载入nginx.conf 
 #启动时会覆盖自定义的nginx.conf
 echo "开始配置nginx.conf..."
 if command -v nginx > /dev/null 2>&1;
@@ -139,12 +139,14 @@ if command -v nginx > /dev/null 2>&1;
     wget https://github.com/Aqr-K/config/raw/main/replit_ytmusic_api/nginx.conf -O /etc/nginx/nginx.conf
     echo "nginx.conf下载完成..."
   else
-    echo "未检测到nginx命令，脚本中断..."
+    echo "未检测到nginx命令，脚本终止运行..."
+    exit
 fi
 
-echo "运行环境与依赖组检测完成..."
+
+echo "运行环境与依赖组件检测完成..."
 
 echo "开始启动..."
+
 service nginx restart
-nginx -s reload
 node ./index.js
